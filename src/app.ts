@@ -1,9 +1,10 @@
 import uniqid from "uniqid";
 
 interface ITodo {
-  id: number;
+  id: string;
   description: string;
   done: boolean;
+  isEditing: boolean;
 }
 
 export class App {
@@ -23,13 +24,13 @@ export class App {
         id: uniqid(),
         description: this.todoDescription,
         done: false,
+        isEditing: false,
       });
       this.todoDescription = "";
     }
-    console.log(this.todos);
   }
 
   removeTodo(todo: ITodo): void {
-    this.todos.filter((to) => to.id != todo.id);
+    this.todos = this.todos.filter((to) => to.id != todo.id);
   }
 }
