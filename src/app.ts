@@ -1,7 +1,3 @@
-// export class App {
-//   public message = "Hello World!";
-// }
-
 import uniqid from "uniqid";
 
 interface ITodo {
@@ -30,6 +26,7 @@ export class App {
       });
       this.todoDescription = "";
     }
+    console.log(this.todos);
   }
 
   removeTodo(todo: ITodo): void {
